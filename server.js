@@ -15,6 +15,12 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+//this is bad practice for deploying like this (just for testing purpose)
+// Serve static files from the "dist" directory
+app.use(express.static('dist'));
+// app.use(express.static(path.join(__dirname, 'dist')));
+
+
 //router middleware
 app.use("", router);
 app.use("", categoryRoutes);
